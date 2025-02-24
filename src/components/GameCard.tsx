@@ -25,7 +25,7 @@ const GameCard = ({ game }: Props) => {
   //   }
   //   ))
   return (
-    <CardRoot borderRadius={10} overflow="hidden">
+    <CardRoot width={"300px"} borderRadius={10} overflow="hidden">
       <Image src={getCroppedImage(game.background_image)} />
       <CardBody>
         <Heading size="2xl">{game.name}</Heading>
