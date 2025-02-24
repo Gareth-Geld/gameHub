@@ -8,8 +8,10 @@ import {
   Icon,
   Image,
   Text,
+  HStack,
 } from "@chakra-ui/react";
 import PlatformIcons from "./PlatformIcons";
+import Metascore from "./metascore";
 
 interface Props {
   game: GameObjects;
@@ -26,9 +28,12 @@ const GameCard = ({ game }: Props) => {
       <Image src={game.background_image} />
       <CardBody>
         <Heading size="2xl">{game.name}</Heading>
-        <PlatformIcons
-          platforms={game.parent_platforms.map((p) => p.platform)}
-        />
+        <HStack justifyContent={"space-between"}>
+          <PlatformIcons
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+          <Metascore score={game.metacritic} />
+        </HStack>
       </CardBody>
     </CardRoot>
   );
