@@ -25,11 +25,11 @@ const GameCard = ({ game }: Props) => {
   //   }
   //   ))
   return (
-    <CardRoot width={"300px"} borderRadius={10} overflow="hidden">
+    <CardRoot>
       <Image src={getCroppedImage(game.background_image)} />
-      <CardBody>
+      <CardBody display="flex">
         <Heading size="2xl">{game.name}</Heading>
-        <HStack justifyContent={"space-between"}>
+        <HStack justifyContent={"space-between"} mt="auto">
           <PlatformIcons
             platforms={game.parent_platforms.map((p) => p.platform)}
           />

@@ -48,7 +48,7 @@ const useGames = () => {
     return () => {
       controller.abort();
     };
-  }, [games, error, isLoading]);
+  }, []);
   return {
     games,
     error,
