@@ -9,7 +9,7 @@ export interface GenreObject {
 }
 
 const useGenres = () => {
-  useData<GenreObject>("/genres");
+  return useData<GenreObject>("/genres");
 };
 
 export default useGenres;

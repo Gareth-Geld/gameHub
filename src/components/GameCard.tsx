@@ -19,11 +19,6 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
-  //   game.parent_platforms.map(({platform})=> (
-  //   if(platform.name === "playstation") {
-  //      let iconIcon = "Playstation"
-  //   }
-  //   ))
   return (
     <CardRoot>
       <Image src={getCroppedImage(game.background_image)} />
