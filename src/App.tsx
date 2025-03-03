@@ -25,7 +25,10 @@ function App() {
         display={{ base: "none", lg: "block" }}
       >
         <GenreList
-          onSelectGenre={(GenreObject) => setSelectedGenre(GenreObject)}
+        selectedGenre={selectedGenre}
+          onSelectGenre={(genre) => {
+            console.log(genre);
+            setSelectedGenre(genre)}}
         />
       </GridItem>
       <GridItem area="main">

@@ -17,9 +17,10 @@ import GenreListItem from "./GenreListItem";
 
 interface Props {
   onSelectGenre: (genre: GenreObject) => void;
+  selectedGenre : GenreObject | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre,onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   const skeletons = [
@@ -40,7 +41,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
         {data.map((data) => (
           <>
             <GameCardContainer key={data.id}>
-              <GenreListItem onSelectGenre={onSelectGenre} Genre={data} />
+              <GenreListItem selectedGenre={selectedGenre} onSelectGenre={onSelectGenre} Genre={data} />
             </GameCardContainer>
           </>
         ))}

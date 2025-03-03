@@ -20,7 +20,7 @@ const useGames = (selectedGenre: GenreObject | null) => {
   return useData<GameObjects>(
     "/games",
     {
-      params: { genre: selectedGenre?.id },
+      params: { genres: selectedGenre?.id },
     },
     [selectedGenre?.id]
   );
