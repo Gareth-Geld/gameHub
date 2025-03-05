@@ -111,8 +111,11 @@ export const MenuSeparator = ChakraMenu.Separator;
 
 export const MenuItem = React.forwardRef<
   HTMLDivElement,
-  ChakraMenu.ItemProps & { children?: React.ReactNode }
->(function MenuItem({ children, ...props }, ref) {
+  ChakraMenu.ItemProps & {
+    children?: React.ReactNode;
+    onClick?: React.MouseEventHandler<HTMLDivElement>;
+  }
+>(function MenuItem({ children, onClick, ...props }, ref) {
   return (
     <ChakraMenu.Item ref={ref} {...props}>
       {children}
