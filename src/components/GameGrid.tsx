@@ -9,13 +9,15 @@ import useData from "../Hooks/UseData";
 import GenreListItemContainer from "./GenreListItemContainer";
 import { GenreObject } from "../Hooks/useGenres";
 import PlatformSelector from "./PlatformSelector";
+import { PlatformObject } from "../Hooks/usePlatforms";
 
 interface Props {
   selectedGenre: GenreObject | null;
+  selectedPlatform: PlatformObject | null;
 }
 
-const GameGrid = ({ selectedGenre }: Props) => {
-  const { data, error, isLoading } = useGames(selectedGenre);
+const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
