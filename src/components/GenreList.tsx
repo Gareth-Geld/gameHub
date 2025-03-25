@@ -3,6 +3,7 @@ import useGenres, { GenreObject } from "../Hooks/useGenres";
 import useData from "../Hooks/UseData";
 import {
   Button,
+  Heading,
   HStack,
   Image,
   List,
@@ -17,10 +18,10 @@ import GenreListItem from "./GenreListItem";
 
 interface Props {
   onSelectGenre: (genre: GenreObject) => void;
-  selectedGenre : GenreObject | null;
+  selectedGenre: GenreObject | null;
 }
 
-const GenreList = ({ selectedGenre,onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   const skeletons = [
@@ -41,7 +42,11 @@ const GenreList = ({ selectedGenre,onSelectGenre }: Props) => {
         {data.map((data) => (
           <>
             <GameCardContainer key={data.id}>
-              <GenreListItem selectedGenre={selectedGenre} onSelectGenre={onSelectGenre} Genre={data} />
+              <GenreListItem
+                selectedGenre={selectedGenre}
+                onSelectGenre={onSelectGenre}
+                Genre={data}
+              />
             </GameCardContainer>
           </>
         ))}

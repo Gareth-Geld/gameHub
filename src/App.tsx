@@ -1,4 +1,11 @@
-import { Button, ButtonGroup, Grid, GridItem, Stack } from "@chakra-ui/react";
+import {
+  Button,
+  ButtonGroup,
+  Grid,
+  GridItem,
+  Heading,
+  Stack,
+} from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
@@ -37,6 +44,9 @@ function App() {
         area="aside"
         display={{ base: "none", lg: "block" }}
       >
+        <Heading fontSize={"xl"} marginBottom={3}>
+          Genres
+        </Heading>
         <GenreList
           selectedGenre={gameQuery.genre}
           onSelectGenre={(genre) => {
