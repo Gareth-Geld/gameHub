@@ -13,6 +13,7 @@ import {
 import PlatformIcons from "./PlatformIcons";
 import Metascore from "./metascore";
 import getCroppedImage from "../Services/image-url";
+import Emoji from "./Emoji";
 
 interface Props {
   game: GameObjects;
@@ -30,6 +31,9 @@ const GameCard = ({ game }: Props) => {
           <Metascore score={game.metacritic} />
         </HStack>
         <Heading size="2xl">{game.name}</Heading>
+        <HStack justifyContent={"end"}>
+          <Emoji rating={game.rating_top} />
+        </HStack>
       </CardBody>
     </CardRoot>
   );
